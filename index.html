@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Рассчет стоимости автомобиля</title>
+</head>
+
+<body>
+    <select id="brand" onchange="selectBrand()">
+        <option value="none" selected>Марка</option>
+        <option value="900000">Chevrolet</option>
+        <option value="700000">Audi</option>
+        <option value="800000">BMW</option>
+
+    </select>
+
+    <select id="models" onchange="selectYear()" disabled="disabled">
+        <option value="none" selected>Модель</option>
+
+
+    </select>
+
+    <select id="year" disabled="disabled">
+        <option value="none" selected>Год выпуска</option>
+
+
+    </select>
+
+
+
+    <button onclick="getResult()">Рассчитать стоимость</button>
+
+    <div class="result"></div>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>
