@@ -1,6 +1,8 @@
 const brands = document.querySelector('#brand')
 const models = document.querySelector('#models')
 const year = document.querySelector('#year')
+const typeFuel = document.querySelectorAll('input[name = "fuel"]')
+const services = document.querySelectorAll('input[name = "documents"]')
 const result = document.querySelector('.result')
 
 
@@ -13,6 +15,8 @@ let chevroletYears = ['2008', '2009', '2010']
 let audiYears = ['2019', '2005', '2012']
 let bmwYears = ['2010', '2019', '2020']
 
+let type 
+let service = [0]
 
 
 const selectBrand = () => {
@@ -83,8 +87,34 @@ const selectYear = () => {
 
 }
 
+const selectFuel = () => {
+   
+    for (let types of typeFuel) {
+        if(types.checked) {
+            type = types.value
+        } 
+       
+    }
+    return type
+}
+
+const selectServices = () => {
+    
+for (let i = 0; i < services.length; i++) {
+    if (services[i].checked) {
+       service = services[i].value
+        
+    }
+    
+    
+}
+return service
+}
+
 const getResult = () => {
-    let brand = Number(brands.value)
-    let model = Number(models.value)
-    result.innerHTML = `Финальная стоимость авто: ${brand + model}`
+    let brand = brands.value
+    let model = models.value
+  
+   
+    result.innerHTML = `Финальная стоимость авто: ${+brand + +model + +type + +service}`
 }

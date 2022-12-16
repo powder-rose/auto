@@ -21,18 +21,32 @@
 
     <select id="models" onchange="selectYear()" disabled="disabled">
         <option value="none" selected>Модель</option>
-
-
     </select>
 
     <select id="year" disabled="disabled">
         <option value="none" selected>Год выпуска</option>
-
-
     </select>
 
+    <p>Выберете тип топлива:</p>
+    <form id="fuel-type" onchange="selectFuel()">
+        <input type="radio" id="dieselFuel" name="fuel" value="1000">
+        <label for="dieselFuel">Дизельное топливо</label>
 
+        <input type="radio" id="gasolineFuel" name="fuel" value="1500">
+        <label for="gasolineFuel">Бензин</label>
 
+        <input type="radio" id="electricFuel" name="fuel" value="3000">
+        <label for="electricFuel">Электрический</label><br><br>
+    </form>
+
+    <p>Дополнительные услуги:</p>
+    <form id="services" onchange="selectServices()">
+        <input type="checkbox" name="documents" id="documentPost" value="1000">
+        <label for="documents">Отправка документов экспресс-почтой</label><br>
+
+        <input type="checkbox" name="documents" id="registrationLegal" value="1500">
+        <label for="documents">Оформление на юр. лицо</label><br><br>
+    </form>
     <button onclick="getResult()">Рассчитать стоимость</button>
 
     <div class="result"></div>
